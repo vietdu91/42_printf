@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 09:17:01 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/04 15:21:34 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/05 19:59:36 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ typedef struct s_structor
 	int		width;
 	int		crash;
 	int		d_and_i;
-//	int		conv_u;
+	int		little_x;
+	int		big_x;
+	int		adress;
+	int		tmp;
 }				t_printf;
 
 /* FT_PRINTF the base */
@@ -72,6 +75,7 @@ int			print_zero(int start, int end, t_printf *t_structor);
 int			print_space(int start, int end, t_printf *t_structor);
 void		print_minus(int nbr, t_printf *t_structor);
 void		print_plus(t_printf *t_structor);
+void		xxxtentacion(t_printf *t_structor);
 
 /* La grandeur d'un homme peut se mesurer à la grandeur 
 des choses qui l'angoissent */
@@ -103,7 +107,7 @@ void		ft_putnstr_double(char *str, t_printf *t_structor);
 
 /* UTILS Print les numbers */
 
-void		ft_putnbr(int n, t_printf *t_structor);
+void		ft_putnbr(long int n, t_printf *t_structor);
 int			ft_atoi(const char *str, t_printf *t_structor);
 void		the_remplisseur_nbr(int nbr, int len, t_printf *t_structor);
 void		the_remplisseur_nbr_simple(int nbr, int len, t_printf *t_structor);
@@ -112,7 +116,7 @@ void		the_remp_nbr_doub(int nbr, int len, t_printf *t_structor, int tmp);
 /* Le nombre des saveurs est infini. [D & I] */
 
 void		print_nbr(t_printf *t_structor, va_list ap);
-void		ft_putnnbr(int nbr, int len, t_printf *t_structor);
+void		ft_putnnbr(long int nbr, int len, t_printf *t_structor);
 void		fork_of_minus(int nbr, t_printf *t_structor);
 void		being_overwhelmed(int nbr, int len, int tmp, t_printf *t_structor);
 
@@ -132,6 +136,24 @@ void		ft_putn_unsnbr(unsigned int n, int len, t_printf *t_structor);
 
 void		print_big_x(t_printf *t_structor);
 void		print_little_x(t_printf *t_structor);
+void		remplisseur_hexa(int len, t_printf *t_structor);
+void		rp_hexa_simple(int len, t_printf *t_structor);
+void		rp_hexa_d(int len, t_printf *t_structor, int tmp);
+
+/* Quiconque né en ce lieu est condamné à y rester jusqu'à la mort. [xX] */
+
+void		print_little_hexa(t_printf *t_structor, va_list ap);
+void		print_big_hexa(t_printf *t_structor, va_list ap);
+void		put_hexa(unsigned long int nbr, char *base, t_printf *t_structor);
+void		putn_hx(unsigned long int n, char *b, int ln, t_printf *t_structor);
+void		x_rays(t_printf *t_structor);
+
+/* C'est par l'adresse que vaut le bûcheron, bien plus que par la force. [P] */
+
+void		print_adress(t_printf *t_structor, va_list ap);
+void		remplisseur_addr(int len, t_printf *t_structor);
+void		rp_addr_simple(int len, t_printf *t_structor);
+void		rp_addr_d(int len, t_printf *t_structor, int tmp);
 
 /* Taux reduit d'imposition des plus-values à long terme [%] */
 

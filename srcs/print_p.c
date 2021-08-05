@@ -1,47 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_hexa_utils.c                                 :+:      :+:    :+:   */
+/*   print_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 13:23:15 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/05 17:04:32 by emtran           ###   ########.fr       */
+/*   Created: 2021/08/05 15:15:22 by emtran            #+#    #+#             */
+/*   Updated: 2021/08/05 21:11:06 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include <limits.h>
 
-void	print_big_x(t_printf *t_structor)
+void	print_adress(t_printf *t_structor, va_list ap)
 {
-	ft_putchar('0');
-	ft_putchar('X');
-	t_structor->total += 2;
+	unsigned long int	nbr;
+	int					len;
+
+	if (!ap)
+		return ;
+	nbr = va_arg(ap, unsigned long int);
+	len = ft_nbrlen_u(nbr, B16LX);
+	t_structor->adress = 1;
+	inspection_douaniere(t_structor);
+	t_structor->width -= 2;
+	if (t_structor->minus == 1 && t_structor->precision < t_structor->width)
+		print_zero(t_structor->precision, len, t_structor);
+	if (t_structor->minus == 0 && nbr != ULONG_MAX
+		&& nbr != (unsigned long int)LONG_MIN)
+		remplisseur_addr(len, t_structor);
+	xxxtentacion(t_structor);
+	put_hexa(nbr, B16LX, t_structor);
+	if (t_structor->minus == 1 && nbr != ULONG_MAX
+		&& nbr != (unsigned long int)LONG_MIN)
+		remplisseur_addr(len, t_structor);
+	t_structor->tmp = 0;
 }
 
-void	print_little_x(t_printf *t_structor)
+void	remplisseur_addr(int len, t_printf *t_structor)
 {
-	ft_putchar('0');
-	ft_putchar('x');
-	t_structor->total += 2;
-}
-
-void	remplisseur_hexa(int len, t_printf *t_structor)
-{
-	int tmp;
+	int	tmp;
 
 	tmp = t_structor->precision - len;
-	if (t_structor->hashtag == 1)
-		t_structor->width -= 2;
 	if (t_structor->precision <= 0 && t_structor->width > 0)
-		rp_hexa_simple(len, t_structor);
+		rp_addr_simple(len, t_structor);
 	else if (t_structor->precision > 0 && t_structor->width <= 0)
-		rp_hexa_simple(len, t_structor);
+		rp_addr_simple(len, t_structor);
 	else if (t_structor->precision > 0 && t_structor->width > 0)
-		rp_hexa_d(len, t_structor, tmp);
+		rp_addr_d(len, t_structor, tmp);
 }
 
-void	rp_hexa_simple(int len, t_printf *t_structor)
+void	rp_addr_simple(int len, t_printf *t_structor)
 {
 	if (t_structor->precision > 0)
 	{
@@ -59,7 +69,7 @@ void	rp_hexa_simple(int len, t_printf *t_structor)
 	}
 }
 
-void	rp_hexa_d(int len, t_printf *t_structor, int tmp)
+void	rp_addr_d(int len, t_printf *t_structor, int tmp)
 {
 	if (t_structor->precision < t_structor->width)
 	{

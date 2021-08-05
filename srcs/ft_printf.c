@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:32:39 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/04 14:30:13 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/05 17:01:56 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ t_printf	back_to_birth(t_printf *t_structor)
 	t_structor->width = 0;
 	t_structor->crash = 0;
 	t_structor->d_and_i = 0;
-/*	t_structor->conv_u = 0;*/
+	t_structor->little_x = 0;
+	t_structor->big_x = 0;
+	t_structor->adress = 0;
+	t_structor->tmp = 0;
 	return (*t_structor);
 }

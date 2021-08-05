@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:43:12 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/04 15:09:58 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/05 15:16:26 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,18 @@ void	check_conversion(char c, t_printf *t_structor, va_list ap)
 		print_char(t_structor, ap);
 	if (c == 's')
 		print_str(t_structor, ap);
-//	if (c == 'p')
-//		print_p(t_structor, ap);
+	if (c == 'p')
+		print_adress(t_structor, ap);
 	if (c == 'd')
 		print_nbr(t_structor, ap);
 	if (c == 'i')
 		print_nbr(t_structor, ap);
 	if (c == 'u')
 		print_uns_nbr(t_structor, ap);
-//	if (c == 'x')
-//		print_little_x(t_structor, ap);
-//	if (c == 'X')
-//		print_big_x(t_structor, ap);
+	if (c == 'x')
+		print_little_hexa(t_structor, ap);	
+	if (c == 'X')
+		print_big_hexa(t_structor, ap);
 	if (c == '%')
 		print_percent(t_structor);
 	t_structor->count++;

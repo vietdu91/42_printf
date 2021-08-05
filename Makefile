@@ -10,11 +10,13 @@ SRCS_C	= 	big_regle_baton.c \
 			print_d_and_i.c \
 			print_hexa_utils.c \
 			print_nbr_utils.c \
+			print_p.c \
 			print_percent.c \
 			print_s.c \
 			print_str_utils.c \
 			print_u.c \
-			print_uns_utils.c 
+			print_uns_utils.c \
+			print_x.c \
 
 DIR_S	= srcs
 
