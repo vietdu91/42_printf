@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:52:19 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/05 21:07:29 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/13 10:33:20 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putnbr(long int nbr, t_printf *t_structor)
 {	
 	if (nbr == -2147483648)
 		t_structor->total -= 2;
+	if (nbr == 0 && (t_structor->crash == 1 || t_structor->zero_prec == 1))
+		return ;
 	print_minus(nbr, t_structor);
 	if (nbr < 0)
 		nbr = nbr * -1;
@@ -56,9 +58,9 @@ int		ft_atoi(const char *str, t_printf *t_structor)
 
 void	the_remplisseur_nbr(int nbr, int len, t_printf *t_structor)
 {
-	int tmp;
+	int	tmp;
 
-	tmp = t_structor->precision - len;	
+	tmp = t_structor->precision - len;
 	if (t_structor->precision <= 0 && t_structor->width > 0)
 		the_remplisseur_nbr_simple(nbr, len, t_structor);
 	else if (t_structor->precision > 0 && t_structor->width <= 0)
@@ -73,7 +75,9 @@ void	the_remplisseur_nbr_simple(int nbr, int len, t_printf *t_structor)
 		t_structor->width--;
 	if (t_structor->precision > 0)
 	{
-		if (len < t_structor->precision)
+		if (t_structor->width == 0 && t_structor->widthor > 0)
+			return ;
+		else if (len < t_structor->precision)
 		{
 			fork_of_minus(nbr, t_structor);
 			print_zero(t_structor->precision, len, t_structor);
@@ -81,7 +85,10 @@ void	the_remplisseur_nbr_simple(int nbr, int len, t_printf *t_structor)
 	}
 	else
 	{
-		if (t_structor->zero == 1 && t_structor->crash == 0)
+		if (nbr == 0 && (t_structor->crash == 1 || t_structor->zero_prec == 1))
+			len = 0;
+		if (t_structor->zero == 1 && t_structor->crash == 0
+			&& t_structor->zero_prec == 0)
 		{
 			fork_of_minus(nbr, t_structor);
 			print_zero(t_structor->width, len, t_structor);
@@ -99,17 +106,17 @@ void	the_remp_nbr_doub(int nbr, int len, t_printf *t_structor, int tmp)
 {
 	if (nbr < 0)
 		t_structor->width--;
-	if (t_structor->precision < t_structor->width)	
+	if (t_structor->precision < t_structor->width)
 		being_overwhelmed(nbr, len, tmp, t_structor);
 	else
 	{
 		if (len < t_structor->precision)
-		{	
+		{			
 			fork_of_minus(nbr, t_structor);
 			print_zero(t_structor->precision, len, t_structor);
 		}
 		else if (t_structor->precision >= t_structor->width)
-		{	
+		{		
 			fork_of_minus(nbr, t_structor);
 			print_zero(t_structor->precision, len, t_structor);
 		}

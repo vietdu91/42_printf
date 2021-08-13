@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:32:39 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/05 17:01:56 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/13 16:12:06 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,34 @@ t_printf	back_to_birth(t_printf *t_structor)
 	t_structor->minus = 0;
 	t_structor->dot = 0;
 	t_structor->precision = 0;
+	t_structor->precistor = 0;
 	t_structor->width = 0;
+	t_structor->widthor = 0;
 	t_structor->crash = 0;
 	t_structor->d_and_i = 0;
+	t_structor->s = 0;
 	t_structor->little_x = 0;
 	t_structor->big_x = 0;
 	t_structor->adress = 0;
 	t_structor->tmp = 0;
+	t_structor->tmp2 = 0;
+	t_structor->zero_prec = 0;
+	t_structor->filtre = 0;
 	return (*t_structor);
+}
+
+void	clean_prec_and_width(t_printf *t_structor)
+{
+	t_structor->precision = 0;
+	t_structor->width = 0;
+	t_structor->tmp = 0;
+	t_structor->tmp2 = 0;
+	t_structor->zero = 0;
+	t_structor->minus = 0;
+	t_structor->d_and_i = 0;
+	t_structor->s = 0;
+	t_structor->little_x = 0;
+	t_structor->big_x = 0;
+	t_structor->adress = 0;
+	t_structor->hashtag = 0;
 }

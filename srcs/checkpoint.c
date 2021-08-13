@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:43:12 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/05 15:16:26 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/13 11:07:42 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	check_width(const char *str, t_printf *t_structor)
 	while (*(str + t_structor->count) == 48)
 		t_structor->count++;
 	t_structor->width = ft_atoi((str + t_structor->count), t_structor);
+	t_structor->widthor = t_structor->width;
 }
 
 void	check_precision(const char *str, t_printf *t_structor)
@@ -53,6 +54,9 @@ void	check_precision(const char *str, t_printf *t_structor)
 	while (*(str + t_structor->count) == 48)
 		t_structor->count++;
 	t_structor->precision = ft_atoi((str + t_structor->count), t_structor);
+	t_structor->precistor = t_structor->precision;
+	if (t_structor->precision == 0)
+		t_structor->zero_prec = 1;
 }
 
 void	check_conversion(char c, t_printf *t_structor, va_list ap)

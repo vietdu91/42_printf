@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 18:52:00 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/03 18:03:21 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/13 08:31:03 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	print_char(t_printf *t_structor, va_list ap)
 		ft_putchar(c);
 		t_structor->total++;
 	}
+	clean_prec_and_width(t_structor);
 }
 
 void	print_char_inv(t_printf *t_structor, char c)
