@@ -5,6 +5,7 @@ SRCS_C	= 	big_regle_baton.c \
 			flags_factory.c \
 			flags_gestion.c \
 			ft_printf.c \
+			highways.c \
 			inspection.c \
 			print_c.c \
 			print_d_and_i.c \

@@ -6,12 +6,11 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 15:15:22 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/13 19:15:17 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/14 15:37:07 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <limits.h>
 
 void	print_adress(t_printf *t_structor, va_list ap)
 {

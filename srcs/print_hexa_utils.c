@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:23:15 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/13 16:05:01 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/14 15:23:51 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	print_little_x(t_printf *t_structor)
 
 void	rp_hexa(unsigned long int nbr, int len, t_printf *t_structor)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = t_structor->precision - len;
 	if (t_structor->hashtag == 1)
@@ -46,7 +46,7 @@ void	rp_hexa_s(unsigned long int nbr, int len, t_printf *t_structor)
 	if (t_structor->precision > 0)
 	{
 		xxxtentacion(t_structor);
-		if (t_structor->width == 0 && t_structor->widthor >= 0 
+		if (t_structor->width == 0 && t_structor->widthor >= 0
 			&& t_structor->tmp2 == 1)
 			return ;
 		else if (len < t_structor->precision)

@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:43:12 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/13 11:07:42 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/14 15:03:48 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	check_conversion(char c, t_printf *t_structor, va_list ap)
 	if (c == 'u')
 		print_uns_nbr(t_structor, ap);
 	if (c == 'x')
-		print_little_hexa(t_structor, ap);	
+		print_little_hexa(t_structor, ap);
 	if (c == 'X')
 		print_big_hexa(t_structor, ap);
 	if (c == '%')

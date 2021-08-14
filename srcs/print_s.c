@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 18:58:15 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/13 11:42:11 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/14 15:24:09 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_putnstr_simple_p(char *str, t_printf *t_structor)
 
 void	ft_putnstr_simple_w(char *str, t_printf *t_structor)
 {
-	int i;
+	int	i;
 
 	if (!str)
 		return ;
@@ -74,7 +74,7 @@ void	ft_putnstr_simple_w(char *str, t_printf *t_structor)
 
 void	ft_putnstr_double(char *str, t_printf *t_structor)
 {
-	int i;
+	int	i;
 
 	if (!str)
 		return ;

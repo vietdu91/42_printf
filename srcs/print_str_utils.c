@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:51:45 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/13 11:43:04 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/14 15:25:38 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putstr(char *str, t_printf *t_structor)
 	int	i;
 
 	if (!str)
-		return ;	
+		return ;
 	i = 0;
 	if (str == 0)
 		return ;
@@ -36,7 +36,7 @@ void	ft_putstr(char *str, t_printf *t_structor)
 
 void	the_remplisseur_str(char *str, t_printf *t_structor)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = t_structor->precision - ft_strlen(str);
 	if (t_structor->precistor == 0 && t_structor->widthor > 0)
@@ -67,7 +67,7 @@ void	the_remplisseur_str_doub(char *str, t_printf *t_structor, int tmp)
 		print_zero(t_structor->width, ft_strlen(str), t_structor);
 	else if (t_structor->zero == 1 && t_structor->precistor > t_structor->width)
 		print_zero(t_structor->width, ft_strlen(str), t_structor);
-	else if (t_structor->zero == 1 && t_structor->precistor > 0 
+	else if (t_structor->zero == 1 && t_structor->precistor > 0
 		&& t_structor->precistor < ft_strlen(str))
 		print_zero(t_structor->width + 1, ft_strlen(str), t_structor);
 	else if (t_structor->precistor > t_structor->widthor

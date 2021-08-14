@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 15:13:24 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/13 13:37:41 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/14 15:25:01 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	remplisseur_unbr(unsigned int nbr, int len, t_printf *t_structor)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = t_structor->precision - len;
 	if (t_structor->precision <= 0 && t_structor->width > 0)

@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 18:44:15 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/13 19:06:53 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/14 15:07:01 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	roulette_a_flags(char c)
 		return (0);
 }
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
@@ -46,30 +46,4 @@ void	inspection_douaniere(t_printf *t_structor)
 	else if (t_structor->precision > 0 && t_structor->width == 0
 		&& t_structor->d_and_i == 0)
 		t_structor->minus = 0;
-}
-
-void	bretelle_arpajon(long int nbr, int len, t_printf *t_structor)
-{
-	if (t_structor->minus == 1 && t_structor->precision > 0
-		&& t_structor->width > 0 && t_structor->precision == t_structor->width)
-	{
-		the_remplisseur_nbr(nbr, len, t_structor);
-		t_structor->filtre = 1;
-	}
-	else if (t_structor->minus == 1 && t_structor->precision > 0
-		&& t_structor->precision > len && t_structor->width <= 0)
-	{
-		the_remplisseur_nbr(nbr, len, t_structor);
-		t_structor->filtre = 1;
-	}
-	else if (t_structor->minus == 0)
-		the_remplisseur_nbr(nbr, len, t_structor);
-}
-
-void	bretelle_montargis(long int nbr, int len, t_printf *t_structor)
-{
-	if (t_structor->minus == 1 && t_structor->filtre == 1)
-		return ;
-	if (t_structor->minus == 1)
-		the_remplisseur_nbr(nbr, len, t_structor);
 }

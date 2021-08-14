@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 13:48:22 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/13 16:27:44 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/14 15:10:24 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_little_hexa(t_printf *t_structor, va_list ap)
 	len = ft_nbrlen_u(nbr, B16LX);
 	inspection_douaniere(t_structor);
 	t_structor->little_x = 1;
-	bretelle_torcy(nbr, len, t_structor);
+	highway_torcy(nbr, len, t_structor);
 	if (nbr != 0)
 		xxxtentacion(t_structor);
 	if (t_structor->precision > 0 || t_structor->width > 0)
@@ -48,7 +48,7 @@ void	print_big_hexa(t_printf *t_structor, va_list ap)
 	len = ft_nbrlen_u(nbr, B16BX);
 	inspection_douaniere(t_structor);
 	t_structor->big_x = 1;
-	bretelle_torcy(nbr, len, t_structor);
+	highway_torcy(nbr, len, t_structor);
 	if (nbr != 0)
 		xxxtentacion(t_structor);
 	if (t_structor->precision > 0 || t_structor->width > 0)
@@ -103,22 +103,4 @@ void	putn_hx(unsigned long int n, char *b, int ln, t_printf *t_structor)
 	else
 		t_structor->total++;
 	ft_putchar(b[i % j]);
-}
-
-void	bretelle_torcy(unsigned long int nbr, int ln, t_printf *t_structor)
-{
-	if (t_structor->minus == 1 && t_structor->precision > 0
-		&& t_structor->width > 0 && t_structor->precision == t_structor->width)
-	{
-		rp_hexa(nbr, ln, t_structor);
-		t_structor->filtre = 1;
-	}
-	else if (t_structor->minus == 0)
-		rp_hexa(nbr, ln, t_structor);
-	if (t_structor->precision > ln && t_structor->minus == 1
-		&& t_structor->precision != t_structor->width)
-	{
-		print_zero(t_structor->precision, ln, t_structor);
-		t_structor->tmp2 = 1;
-	}
 }

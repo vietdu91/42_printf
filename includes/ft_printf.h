@@ -6,7 +6,7 @@
 /*   By: emtran <emtran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 09:17:01 by emtran            #+#    #+#             */
-/*   Updated: 2021/08/13 18:49:39 by emtran           ###   ########.fr       */
+/*   Updated: 2021/08/14 15:36:49 by emtran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_structor
 {
@@ -67,8 +68,6 @@ void		check_conversion(char c, t_printf *t_structor, va_list ap);
 int			roulette_a_flags(char c);
 int			ft_isdigit(int c);
 void		inspection_douaniere(t_printf *t_structor);
-void		bretelle_arpajon(long int nbr, int len, t_printf *t_structor);
-void		bretelle_montargis(long int nbr, int len, t_printf *t_structor);
 
 /* Gestion of flags */
 
@@ -93,6 +92,14 @@ int			ft_strlen(const char *str);
 int			ft_nbrlen(long int n, char *base, t_printf *t_structor);
 int			ft_nbrlen_u(long int n, char *base);
 int			the_temporisation(int tmp, t_printf *t_structor);
+
+/* Je vois la victoire comme les bornes d’une autoroute sans fin */
+
+void		highway_chatou(unsigned int n, int len, t_printf *t_structor);
+void		highway_argenteuil(unsigned int n, int len, t_printf *t_structor);
+void		highway_torcy(unsigned long int nbr, int ln, t_printf *t_structor);
+void		highway_arpajon(long int nbr, int len, t_printf *t_structor);
+void		highway_montargis(long int nbr, int len, t_printf *t_structor);
 
 /* UTILS Print les string */
 
@@ -128,6 +135,7 @@ void		print_nbr(t_printf *t_structor, va_list ap);
 void		ft_putnnbr(long int nbr, int len, t_printf *t_structor);
 void		fork_of_minus(int nbr, t_printf *t_structor);
 void		being_overwhelmed(int nbr, int len, int tmp, t_printf *t_structor);
+void		bulls_eye(int nbr, int len, t_printf *t_structor);
 
 /* UTILS Print les numbers non-signés */
 
@@ -140,8 +148,6 @@ void		rp_unb_d(unsigned int nbr, int len, t_printf *t_structor, int tmp);
 void		print_uns_nbr(t_printf *t_structor, va_list ap);
 void		ft_put_unsnbr(unsigned int n, t_printf *t_structor);
 void		ft_putn_unsnbr(unsigned int n, int len, t_printf *t_structor);
-void		bretelle_chatou(unsigned int n, int len, t_printf *t_structor);
-void		bretelle_argenteuil(unsigned int n, int len, t_printf *t_structor);
 
 /* UTILS Print les hexas */
 
@@ -157,7 +163,6 @@ void		print_little_hexa(t_printf *t_structor, va_list ap);
 void		print_big_hexa(t_printf *t_structor, va_list ap);
 void		put_hexa(unsigned long int nbr, char *base, t_printf *t_structor);
 void		putn_hx(unsigned long int n, char *b, int ln, t_printf *t_structor);
-void		bretelle_torcy(unsigned long int nbr, int ln, t_printf *t_structor);
 
 /* C'est par l'adresse que vaut le bûcheron, bien plus que par la force. [P] */
 
